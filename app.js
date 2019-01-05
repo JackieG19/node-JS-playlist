@@ -1,18 +1,19 @@
-// asynchronous versions using the node core module FS
+// asynchronous writeFile
 
 var fs = require('fs');
 
-fs.readFile('readMe.txt', 'utf8', function(err, data){
-    console.log(data);
+fs.readFileSync('readMe.txt', 'utf8', function(err, data){
+    fs.readFile('writeMe.txt', data);
 });
 
-console.log('test');
 
 
 
+// fs.readFile('readMe.txt', 'utf8', function(err, data){
+//     console.log(data);
+// });
 
-
-
+// console.log('test');
 
 
 
