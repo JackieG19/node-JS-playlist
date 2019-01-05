@@ -3,19 +3,24 @@ var fs = require('fs');
 
 // asynchronous versions 
 
-fs.mkdir('stuff', function(){
-// creates a directory called stuff
-   fs.readFile('readMe.txt', 'utf8', function(err, data){
-    // read the readMe file
-       fs.writeFile('./stuff/writeMe.txt', data);
-       // makes a writeMe file inside the stuff directory
-   }) ;
+fs.unlink('./stuff/writeMe.txt', function(){
+    fs.rmdir('stuff');
 });
+// removes the stuff folder and the writeMe.txt inside
 
 
 
 
 
+
+// fs.mkdir('stuff', function(){
+// creates a directory called stuff
+   // fs.readFile('readMe.txt', 'utf8', function(err, data){
+    // read the readMe file
+        // fs.writeFile('./stuff/writeMe.txt', data);
+       // makes a writeMe file inside the stuff directory
+   // }) ;
+// });
 
 
 // fs.mkdirSync('stuff');
